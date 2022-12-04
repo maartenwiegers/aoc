@@ -8,9 +8,17 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Day3Test {
+class Day3Test {
 
     private final Day3 day3 = new Day3();
+
+    private static Stream<Arguments> getPart1Arguments() {
+        return Stream.of(Arguments.of("example", 157), Arguments.of("puzzleinput", 7878));
+    }
+
+    private static Stream<Arguments> getPart2Arguments() {
+        return Stream.of(Arguments.of("example", 70), Arguments.of("puzzleinput", 2760));
+    }
 
     @ParameterizedTest
     @MethodSource("getPart1Arguments")
@@ -22,12 +30,5 @@ public class Day3Test {
     @MethodSource("getPart2Arguments")
     void shouldGetCorrectAnswerPart2(String filename, int expected) {
         assertEquals(expected, day3.getSumOfPrioritiesOfBadges(filename));
-    }
-    private static Stream<Arguments> getPart1Arguments() {
-        return Stream.of(Arguments.of("example", 157) , Arguments.of("puzzleinput", 7878));
-    }
-
-    private static Stream<Arguments> getPart2Arguments() {
-        return Stream.of(Arguments.of("example", 70), Arguments.of("puzzleinput", 2760));
     }
 }

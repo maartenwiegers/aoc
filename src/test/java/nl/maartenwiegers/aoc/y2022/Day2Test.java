@@ -12,6 +12,14 @@ class Day2Test {
 
     private final Day2 day2 = new Day2();
 
+    private static Stream<Arguments> getPart1Arguments() {
+        return Stream.of(Arguments.of("example", 15), Arguments.of("puzzleinput", 14264));
+    }
+
+    private static Stream<Arguments> getPart2Arguments() {
+        return Stream.of(Arguments.of("example", 12), Arguments.of("puzzleinput", 12382));
+    }
+
     @ParameterizedTest
     @MethodSource("getPart1Arguments")
     void shouldGetCorrectAnswerPart1(String filename, int expected) {
@@ -22,12 +30,5 @@ class Day2Test {
     @MethodSource("getPart2Arguments")
     void shouldGetCorrectAnswerPart2(String filename, int expected) {
         assertEquals(expected, day2.getScore(filename, 2));
-    }
-    private static Stream<Arguments> getPart1Arguments() {
-        return Stream.of(Arguments.of("example", 15) , Arguments.of("puzzleinput", 14264));
-    }
-
-    private static Stream<Arguments> getPart2Arguments() {
-        return Stream.of(Arguments.of("example", 12), Arguments.of("puzzleinput", 12382));
     }
 }
