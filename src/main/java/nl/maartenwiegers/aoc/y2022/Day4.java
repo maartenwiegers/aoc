@@ -23,14 +23,17 @@ public class Day4 {
 
     private Boolean isOverlapping(AssignmentPair assignmentPair, String mode) {
         List<Integer> firstRange = IntStream.rangeClosed(assignmentPair.firstAssignment.start, assignmentPair.firstAssignment.end)
-                .boxed().toList();
+                .boxed()
+                .toList();
         List<Integer> secondRange = IntStream.rangeClosed(assignmentPair.secondAssignment.start, assignmentPair.secondAssignment.end)
-                .boxed().toList();
+                .boxed()
+                .toList();
 
         if (mode.equals("full")) {
             return new HashSet<>(firstRange).containsAll(secondRange) || new HashSet<>(secondRange).containsAll(firstRange);
         }
-        return firstRange.stream().anyMatch(secondRange::contains) || secondRange.stream()
+        return firstRange.stream()
+                .anyMatch(secondRange::contains) || secondRange.stream()
                 .anyMatch(firstRange::contains);
     }
 

@@ -41,4 +41,9 @@ public class FileService {
                         StringUtils.splitByWholeSeparatorPreserveAllTokens(Files.readString(getPath(filename)), "\r\n\r\n"))
                 .toList();
     }
+
+    @SneakyThrows
+    public static List<Long> getInputAsListLong(@NonNull String filename) {
+        return Files.readAllLines(getPath(filename)).stream().map(Long::valueOf).toList();
+    }
 }
