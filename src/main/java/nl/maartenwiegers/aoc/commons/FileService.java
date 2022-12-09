@@ -46,4 +46,9 @@ public class FileService {
     public static List<Long> getInputAsListLong(@NonNull String filename) {
         return Files.readAllLines(getPath(filename)).stream().map(Long::valueOf).toList();
     }
+
+    @SneakyThrows
+    public static String getSingleLineInput(@NonNull String filename) {
+        return Files.readString(getPath(filename));
+    }
 }
