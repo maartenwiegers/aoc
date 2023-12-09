@@ -37,8 +37,8 @@ public class Day1 {
 
     private static final String[] FIND = WORD_TO_DIGIT_REPLACEMENTS.keySet().toArray(new String[0]);
     private static final String[] REPLACE = WORD_TO_DIGIT_REPLACEMENTS.values().toArray(new String[0]);
-    private final Pattern NUMBERS =
-            Pattern.compile("(1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|seven|eight|nine)");
+    private static final Pattern NUMBERS = Pattern.compile(
+            "(1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|seven|eight|nine)");
 
     public long getSumOfCalibrationValues(String filename, boolean replaceWordsToDigits) {
         List<String> values = FileService.getInputAsListString(String.format(INPUT_FILE_NAME, filename));
@@ -57,7 +57,7 @@ public class Day1 {
                     position = matcher.start() + 1;
                 }
                 firstDigit = StringUtils.replaceEach(numbers.get(0), FIND, REPLACE);
-                lastDigit = StringUtils.replaceEach(numbers.get(numbers.size() -1), FIND, REPLACE);
+                lastDigit = StringUtils.replaceEach(numbers.get(numbers.size() - 1), FIND, REPLACE);
             }
 
             String valueNumber = firstDigit.concat(lastDigit);
