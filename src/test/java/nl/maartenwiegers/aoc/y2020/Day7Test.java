@@ -29,6 +29,6 @@ class Day7Test {
     }
 
     private static Stream<Arguments> getPart2Arguments() {
-        return Stream.of(Arguments.of(32, "example"), Arguments.of(20, "puzzleinput"));
+        return Stream.of(Arguments.of(32, "example"), Arguments.of(3805, "puzzleinput"));
     }
 }

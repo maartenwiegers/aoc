@@ -37,3 +37,5 @@ out/
 .vscode/
 
 *.hprof
+
+/src/main/resources*

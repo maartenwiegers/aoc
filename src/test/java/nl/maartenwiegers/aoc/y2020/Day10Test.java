@@ -21,7 +21,7 @@ class Day10Test {
     private static Stream<Arguments> getArgumentsPart2() {
         return Stream.of(Arguments.of("example-small", 8),
                 Arguments.of("example-large", 19208),
-                Arguments.of("puzzleinput", 2516));
+                Arguments.of("puzzleinput", 296196766695424L));
     }
 
     @ParameterizedTest
@@ -32,7 +32,7 @@ class Day10Test {
 
     @ParameterizedTest
     @MethodSource("getArgumentsPart2")
-    void shouldGetCorrectAnswersPart2(String filename, int expected) {
+    void shouldGetCorrectAnswersPart2(String filename, long expected) {
         assertEquals(expected, day10.getNumberOfPossibleArrangements(filename));
     }
 }

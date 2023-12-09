@@ -14,7 +14,7 @@ class Day9Test {
 
     private static Stream<Arguments> getArgumentsPart1() {
         return Stream.of(Arguments.of("example", 5, 127L),
-                Arguments.of("puzzleinput", 25, 123L));
+                Arguments.of("puzzleinput", 25, 466456641));
     }
 
     private static Stream<Arguments> getArgumentsPart2() {
